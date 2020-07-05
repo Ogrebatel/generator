@@ -15,7 +15,7 @@ bool sequence_is_right (const uint32_t* sequence_to_check, const uint32_t size_s
     if (sequence_to_check[size_seq - 1] != 1)
         return false;
     check_array = malloc((size_seq - 1) * sizeof(bool));
-    memset(check_array, 0, size_seq - 1);
+    memset(check_array, 0, (size_seq - 1) * sizeof(bool));
 
     for (i = 0; i < size_seq - 1; ++i) {
         if (check_array[sequence_to_check[i] - 1] == false) {

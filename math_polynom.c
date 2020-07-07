@@ -2,10 +2,12 @@
 #include <stdint.h>
 
 uint16_t remainder_of_division(uint16_t dividend, uint16_t divider){
+    uint16_t tmp_divider;
     while(dividend >= divider){
-        while ( ((dividend ^ divider) >= dividend) || ((dividend ^ divider) >= divider) )
-            divider <<=1;
-        dividend ^= divider;
+        tmp_divider = divider;
+        while ( ((dividend ^ tmp_divider) >= dividend) || ((dividend ^ tmp_divider) >= tmp_divider) )
+            tmp_divider <<=1;
+        dividend ^= tmp_divider;
     }
     return dividend;
 }
